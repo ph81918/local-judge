@@ -1,13 +1,13 @@
-CC := gcc
-CFLAGS := -Wall
-TARGET := scanner
+CC := riscv64-unknown-linux-gnu-gcc
+CFLAGS := -static
+TARGET := 1 2 3 4
 v := 0
 
 all: $(TARGET)
 
-$(TARGET): main.c
+%.o: %.c
 	$(CC) $(CFLAGS) -o $@ $^
-
+	
 judge: all
 	@judge -v ${v} || printf "or \`make judge v=1\`"
 
