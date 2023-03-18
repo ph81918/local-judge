@@ -8,6 +8,15 @@ all: $(TARGET)
 %.o: %.c
 	$(CC) $(CFLAGS) -o $@ $^
 
+1: 1.c
+	$(CC) $(CFLAGS) -o $@ $^
+2: 2.c
+	$(CC) $(CFLAGS) -o $@ $^
+3: 3.c
+	$(CC) $(CFLAGS) -o $@ $^
+4: 4.c
+	$(CC) $(CFLAGS) -o $@ $^
+
 judge: all
 	-judge -c judge1.conf
 	@printf "or \`judge -c judge1.conf -v 1\n\`"
